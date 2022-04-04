@@ -1,2 +1,2 @@
 #!/bin/bash
-wc /etc/passwd | sort | uniq | grep bin
+grep -c -f bin /etc/passwd
