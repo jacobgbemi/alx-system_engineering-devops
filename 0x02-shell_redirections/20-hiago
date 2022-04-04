@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -dc '[cC]' 
+tr -d 'cC' 
