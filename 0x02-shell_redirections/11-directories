@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lR | egrep -c
+ls -lR . | egrep -c
