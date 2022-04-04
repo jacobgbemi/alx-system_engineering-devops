@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Reverse" | grep -o . | tac | tr -d  
+rev  
