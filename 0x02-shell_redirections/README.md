@@ -1,0 +1,1 @@
+Readme in shell redirections
