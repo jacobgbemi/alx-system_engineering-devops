@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Script kills another script running in another terminal forcibly
 
-pkill -SIGKILL -f 7-highlander
+pkill -9 -f "7-highlander"
