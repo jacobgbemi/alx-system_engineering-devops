@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # display all processes (a): user-oriented (u), w/wo TTY (x), show heirachy (f)
-
 ps auxf
