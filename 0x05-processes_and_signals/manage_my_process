@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Infinite loop. Script to be used with 101-manage_my_process
+# Infinite loop. Script to be used with 101-manage_my_process.
 
 while (true)
 do
