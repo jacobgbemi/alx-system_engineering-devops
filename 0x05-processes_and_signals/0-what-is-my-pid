@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Bash script to display PID
+# Bash script to display running PID
 
 echo $$

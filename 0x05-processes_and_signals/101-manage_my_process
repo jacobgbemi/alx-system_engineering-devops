@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Start/Stops/Restarts. Script to be used with manage_my_process
+# Script to Start/Stop/Restart a process. Script to be used with manage_my_process
 
 argv1=$1
 tmpfile="/var/run/my_process.pid"

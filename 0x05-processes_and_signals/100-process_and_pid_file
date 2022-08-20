@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Infinite loop creates file with pid, catches signal, and removes file/exits:
+# Infinite loop to create file with pid, catches signal, and removes file/exits:
 # Ctrl-C (SIGINT), kill (SIGTERM), and ctrl-| (SIGQUIT)
 
 rmfile_n_exit()
