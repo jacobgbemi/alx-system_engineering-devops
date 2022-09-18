@@ -2,4 +2,4 @@
 These tasks explored the design of web infrastructures, their interactions and industry standards.
 
 ## Simple Web Stack
-![Simple Web Stack](https://drive.google.com/file/d/1TUpWryRJaicoaAk2Dow6XGBg9gdEuUfh/view?usp=sharing)
+![Simple Web Stack](https://github.com/jacobgbemi/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/simple_web_stack.jpg)
