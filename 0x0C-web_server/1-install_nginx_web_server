@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-# Install nginx on web server; Nginx should be listening on port 80
+# This script installs nginx on your server
 
-sudo apt-get update
-sudo apt-get install -y nginx
-
-sudo mkdir /etc/nginx/html
-sudo touch /etc/nginx/html/index.html
-sudo echo "Hello World" > /etc/nginx/html/index.html
-sudo printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.htm;
-}
-" > /etc/nginx/sites-available/default
-
-sudo service nginx restart
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo chown -R $USER:$USER /var/www
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo service nginx start
