@@ -1,3 +1,4 @@
+# Puppet manifest to install nginx and configure the server
 package { 'nginx':
   ensure => installed,
 }
