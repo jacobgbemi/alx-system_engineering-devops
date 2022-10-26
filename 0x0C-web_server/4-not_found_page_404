@@ -1,33 +1,13 @@
 #!/usr/bin/env bash
-# Installs Nginx with the following configurations:
-#+    Listens on port 80.
-#+    Returns a page containing "Holberton School" when queried
-#+     at the root with a curl GET request.
-# Configures /redirect_me as a "301 Moved Permanently".
-# Includes a custom 404 page containing "Ceci n'est pas une page".
+# This script configures the Nginx server so that
+# /redirect_me is redirecting to another page
 
-apt-get update
-apt-get install -y nginx
-
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello World" > /etc/nginx/html/index.html
-touch /etc/nginx/html/404.html
-echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
-
-printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   /etc/nginx/html;
-    index  index.html index.htm;
-    location /redirect_me {
-        return 301 http://cuberule.com/;
-    }
-    error_page 404 /404.html;
-    location /404 {
-      root /etc/nginx/html;
-      internal;
-    }
-}" > /etc/nginx/sites-available/default
-
-service nginx restart
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo chown -R "$USER":"$USER" /var/www
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo mkdir -p /var/www/error
+echo "Ceci n'est pas une page" | sudo tee /var/www/error/404.html
+sudo sed -i '/server_name _/a error_page 404 /404.html; location = /404.html {root /var/www/error/;internal; }' /etc/nginx/sites-available/default
+sudo service nginx start
