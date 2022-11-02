@@ -36,17 +36,16 @@ defaults
 # start of parameters for jacobgbemi.tech
 frontend jacobgbemi.tech-http-frontend
 	bind	 *:80
-	http-request set-header X-Forwarded-Proto http
-	default_backend	 jacobgbemi.tech-backend
+	option forwardfor
+	default_backend	 nginx_webservers
 
 
 frontend  jacobgbemi.tech-https-frontend
-	bind *:443 ssl crt /etc/ssl/jacobgbemi.tech.pem
-	http-request set-header X-Forwarded-Proto https
-        default_backend jacobgbemi.tech-backend
+	bind *:443 ssl crt /etc/letsencrypt/live/www.jacobgbemi.tech/fullchain.pem
+        default_backend nginx_webservers
 
 
-backend gogrene.tech-backend
+backend nginx_webservers
         balance roundrobin
         server 33935-web-01 34.239.147.107:80 check
         server 33935-web-02 52.3.247.207:80 check
