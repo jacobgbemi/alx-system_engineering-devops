@@ -1,5 +1,6 @@
 # 0x19-postmortem
 
+![Postmortem](https://github.com/jacobgbemi/alx-system_engineering-devops/blob/main/0x19-postmortem/postmortem.png)
 ## Service Failure - Incident Report on Site Outage
 
 ### Issue Summary
